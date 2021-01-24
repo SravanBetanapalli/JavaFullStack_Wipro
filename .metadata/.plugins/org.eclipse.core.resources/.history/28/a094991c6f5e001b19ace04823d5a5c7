@@ -1,0 +1,5 @@
+package com.test.Hibernate.HibernateDemo;
+
+public class BookManager {
+
+}

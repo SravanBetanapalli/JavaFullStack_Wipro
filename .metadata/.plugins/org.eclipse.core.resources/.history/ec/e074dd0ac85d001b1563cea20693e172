@@ -1,0 +1,5 @@
+package com.websystique.hibernate;
+
+public class HibernateStandAloneDemo {
+
+}
