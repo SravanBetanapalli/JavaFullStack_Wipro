@@ -59,17 +59,40 @@ public class BookManager {
  
     protected void update() {
         // code to modify a book
+    	Book book = new Book();
+    	book.setId(1);
+    	book.setAuthor("replaced by Sravan");
+    	book.setTitle("PAWANISM");
+    	book.setPrice(1000f);
+    	
+    	Session session = sessionFactory.openSession();
+    	session.beginTransaction();
+    	
+    	session.update(book);
+    	session.getTransaction().commit();
+    	session.close();
+    	
     }
  
     protected void delete() {
         // code to remove a book
+    	Book book  = new Book();
+    	book.setId(1);
+    	
+    	Session session = sessionFactory.openSession();
+    	session.beginTransaction();
+    	session.delete(book);
+    	session.getTransaction().commit();
+    	session.close();
+    	
+    	
     }
  
     public static void main(String[] args) {
         // code to run the program
     	 BookManager manager = new BookManager();
 		    manager.setup();
-		    manager.read();
+		    manager.delete();
 		    manager.exit();
 		
     }
